@@ -8,6 +8,7 @@ DATABASES = {
         'NAME': 'checkpoint',
         'USER': 'guard',
         'PASSWORD': 'osim5',
+        
     }
 }
 
