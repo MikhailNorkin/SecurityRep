@@ -4,29 +4,31 @@ from django.shortcuts import render
 from django.utils import timezone
 from math import floor
 
-# Функция возвращает количество секунд от текущего момента до даты начала визита
 def get_duration(visit):
+    '''Функция возвращает количество секунд от текущего момента до даты начала визита'''
+    
     delta = timezone.localtime() - visit.entered_at
     seconds = delta.total_seconds()
     return seconds 
 
-# Фунция переводит секунды в часы и минуты
 def format_duration(duration):
+    '''Фунция переводит секунды в часы и минуты'''
+
     hours = floor(duration // 3600)
     mins = floor((duration-hours*3600) // 60)
     return print(str(hours)+'ч '+str(mins)+'мин')
 
-# Функция переводит секунды в часы, минуты и секунды
 def format_time(seconds):
+    '''Функция переводит секунды в часы, минуты и секунды'''
+
     hours = floor(seconds // 3600)
     mins = floor((seconds-hours*3600) // 60)
     secs = floor(seconds - hours * 3600 - mins * 60)
     return '{}:{:02}:{:02}'.format(hours, mins, secs)
 
 def storage_information_view(request):
-    # Программируем здесь
+    '''Функция получает активные визиты пользователей'''
 
-    # Задание 8. Получить активные визиты пользователей
     myList = []
     visit_in = Visit.objects.filter(leaved_at = None)
     for visit in visit_in:
@@ -44,9 +46,9 @@ def storage_information_view(request):
 
     non_closed_visits = myList
     context = {
-        'non_closed_visits': non_closed_visits,  # не закрытые посещения
+        'non_closed_visits': non_closed_visits,  
     }
     return render(request, 'storage_information.html', context)
-    # Задание 8. Конец
+    
 
 

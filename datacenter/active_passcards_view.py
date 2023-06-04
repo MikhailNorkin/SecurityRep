@@ -4,12 +4,11 @@ from django.shortcuts import render
 
 
 def active_passcards_view(request):
-    # Программируем здесь
-
-    # Задание 7. Показать активные карты
-    all_passcards = Passcard.objects.filter(is_active=True)
+    """ Функция выводит активные карты """
+    
+    active_passcards = Passcard.objects.filter(is_active=True)
     context = {
-        'active_passcards': all_passcards,  # люди с активными пропусками
+        'active_passcards': active_passcards,  
     }
     return render(request, 'active_passcards.html', context)
-    # Задание 7. Конец
+
