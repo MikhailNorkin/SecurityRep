@@ -12,15 +12,11 @@ def is_visit_long(visit_in_time , mins = 60 ):
     else:
         return False
 
-def my_view(passcode):
-    '''Функция возвращает ошибку, если карточка не найдена'''
-    return get_object_or_404(Passcard, passcode = passcode)        
-
 def passcard_info_view(request, passcode):
     ''' Функция выводит Список всех посещений определенного посетителя и проводит проверку на подозрительность'''
 
-    my_view(passcode) 
-    myList = []
+    get_object_or_404(Passcard, passcode = passcode)
+    my_list = []
     passcard_visit = Passcard.objects.get(passcode = passcode)
     visits = Visit.objects.filter(passcard = passcard_visit)
     for visit_in in visits:
@@ -28,14 +24,14 @@ def passcard_info_view(request, passcode):
         seconds = delta.total_seconds() 
         time_in = format_time(seconds)
         time_inside = is_visit_long(seconds)
-        myDict = {
+        my_dict = {
             "entered_at": visit_in.entered_at,
             "duration": time_in,
             'is_strange': time_inside
             }
-        myList.append(myDict)
+        my_list.append(my_dict)
 
-    this_passcard_visits = myList
+    this_passcard_visits = my_list
     context = {
         'passcard': passcard_visit,
         'this_passcard_visits': this_passcard_visits

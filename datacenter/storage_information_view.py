@@ -6,7 +6,7 @@ from math import floor
 
 def get_duration(visit):
     '''Функция возвращает количество секунд от текущего момента до даты начала визита'''
-    
+
     delta = timezone.localtime() - visit.entered_at
     seconds = delta.total_seconds()
     return seconds 
@@ -29,7 +29,7 @@ def format_time(seconds):
 def storage_information_view(request):
     '''Функция получает активные визиты пользователей'''
 
-    myList = []
+    my_list = []
     visit_in = Visit.objects.filter(leaved_at = None)
     for visit in visit_in:
         seconds = get_duration(visit)  
@@ -37,14 +37,14 @@ def storage_information_view(request):
         passcard = visit.passcard
         pas_name = str(passcard.owner_name)
         time_in = visit.entered_at
-        myDict = {
+        my_dict = {
             "who_entered": pas_name,
             "entered_at": time_in,
             'duration': time_inside
             }
-        myList.append(myDict)
+        my_list.append(my_dict)
 
-    non_closed_visits = myList
+    non_closed_visits = my_list
     context = {
         'non_closed_visits': non_closed_visits,  
     }
