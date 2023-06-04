@@ -7,11 +7,7 @@ DATABASES = {
         'PORT': '5434',
         'NAME': 'checkpoint',
         'USER': 'guard',
-        'PASSWORD': 'osim5',
-<<<<<<< HEAD
-        
-=======
->>>>>>> 7d9e53603e5bb38abf08dcc979b6bc8820f6279e
+        'PASSWORD': 'osim5'
     }
 }
 
