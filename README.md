@@ -5,8 +5,8 @@
 
 # Как установить
 
-Скрипт совместим с Phyton с установленным фреймовком django и библиотеками psycopg2-binary и python-dotenv. 
-Зависимости находятся в файле requirements.txt
+Скрипт совместим с Phyton с установленным фреймовком django и библиотеками psycopg2-binary и python-dotenv.<br/> 
+Зависимости находятся в файле "requirements.txt"<br/>
 Код запускается командой:<br/> `python manage.py runserver 0.0.0`
 
 # Цель проекта
