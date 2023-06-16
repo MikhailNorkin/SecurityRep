@@ -16,11 +16,11 @@ DATABASES = {
     }
 }
 
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS")
+
 INSTALLED_APPS = ['datacenter']
 
 ROOT_URLCONF = 'project.urls'
-
-ALLOWED_HOSTS = ['*']
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES = [
