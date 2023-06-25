@@ -18,15 +18,15 @@
 # Файл .env
 В файле .env храняться следующие настройки:
 
-Настрокий базы данныхЖ
-DATABASES_ENGINE = 'django.db.backends.postgresql_psycopg2'
-DATABASES_HOST = 'checkpoint.devman.org'
-DATABASES_PORT = '5434'
-DATABASES_NAME = 'checkpoint'
-DATABASES_USER = 'guard'
-DATABASES_PASSWORD 
+Настрокий базы данных:<br/>
+DATABASES_ENGINE = 'django.db.backends.postgresql_psycopg2'<br/>
+DATABASES_HOST = 'checkpoint.devman.org'<br/>
+DATABASES_PORT = '5434'<br/>
+DATABASES_NAME = 'checkpoint'<br/>
+DATABASES_USER = 'guard'<br/>
+DATABASES_PASSWORD <br/>
 
-SECRET_KEY 
+SECRET_KEY
 
 DEBUG = false
 
